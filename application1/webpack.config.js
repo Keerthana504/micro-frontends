@@ -43,7 +43,11 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "application1",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        home: "application1@http://localhost:3000/remoteEntry.js",
+        pdp: "application2@http://localhost:3001/remoteEntry.js",
+        cart: "application3@http://localhost:3002/remoteEntry.js",
+      },
       exposes: {
         "./Header": "./src/Header.jsx",
         "./Footer": "./src/Footer.jsx",
