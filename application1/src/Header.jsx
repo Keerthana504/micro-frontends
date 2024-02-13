@@ -1,14 +1,23 @@
 import React from "react";
-import { ReactDOM } from "react";
 
 import MiniCart from "cart/MiniCart";
 import Login from "cart/Login";
+
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="p-5 bg-blue-500 text-white text-3xl font-bold">
       <div className="flex">
-        <div className="flex-grow">Fidget Spinner World 2</div>
+        <div className="flex-grow flex">
+          <Link to="/" reloadDocument>
+            Fidget Spinner World
+          </Link>
+          <div className="mx-5">|</div>
+          <Link to="/cart" reloadDocument>
+            Cart
+          </Link>
+        </div>
         <div className="flex-end relative">
           <MiniCart />
           <Login />
